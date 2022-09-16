@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+
+<title>Cloud 2 - Introducing Cloud Architecture - Not A Shopping Note</title>
+
+
+
+<link rel="stylesheet" href="/notashoppingnote/scss/style.min.6d03e212cc1ce3781740114de93884b9fcdf6e46dc6076ccb066b1f3acdadafc.css">
+</head>
+  <body>
+    <header class="header">
+  <div class="header__title">
+    <a href="https://devismail2y.github.io/notashoppingnote/">Not A Shopping Note</a>
+  </div>
+  <div class="headerNav">
+    <ul class="headerNav__items">
+      <li>
+        <a href="https://devismail2y.github.io/notashoppingnote/search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="container">
+      <main class="main">
+        
+<div class="post">
+  <div class="post__header">
+    
+    <img class="post__image" src="/notashoppingnote/new-notashoppingnote/cloud-2/cloud.jpg">
+  </div>
+
+  
+  <div class="post__tags">
+    
+      <a class="post__tag" href="https://devismail2y.github.io/notashoppingnote/tags/cloud-computing">Cloud Computing</a>
+    
+  </div>
+  
+
+  <section class="post__content">
+    <h1 id="title">Cloud 2 - Introducing Cloud Architecture</h1>
+    <div>
+      <article>
+          <h1 id="well-architected-framework">Well-Architected Framework</h1>
+<p><img src="attachments/Pasted%20image%2020220902083341.png" alt=""><br>
+.</p>
+<p>A guide that is designed to help you build the most secure, high-performing, resilient, and efficient infrastructure possible for your cloud applications and workloads.</p>
+<ul>
+<li>
+<p><strong>Security</strong>: the ability to protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies. The implementation: strong identity foundation, enable traceability, security at all layers, automate security best practices,and protect data in transit and at rest.</p>
+</li>
+<li>
+<p><strong>Operational Excellence</strong>: the ability to run systems and gain insight into their operations to deliver business value. It also addresses the ability to continuously improve supporting processes and procedures.</p>
+<ul>
+<li>Aware how it will be deployed, updated, and operated.</li>
+<li>Implementing engineering practices to reduce defect and do quick safe fixes.</li>
+<li>Enable observation through logging, instrumentation, and business technical metrics.</li>
+</ul>
+</li>
+<li>
+<p><strong>Reliability</strong>: the ability of a system to recover from infrastructure or service disruptions and dynamically acquire computing resources to meet demand. It also addresses the ability of a system to mitigate disruptions such as misconfigurations or transient network issues.</p>
+</li>
+<li>
+<p><strong>Performance Efficiency</strong>: o maximize your performance by using computation resources efficiently. You also want to maintain that efficiency as the demand changes.</p>
+<ul>
+<li>Consider using a vendor to any technology that difficult to implement yourself.</li>
+<li>Mechanical sympathy: use a tool or system with an understanding of how it operates best. Use the technology approach that aligns best to what you are trying to achieve. i.e. consider data access patterns when you select database or storage approaches.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cost Optimization</strong>: ongoing requirement of any good architectural design. The process is iterative, and it should be refined and improved throughout your production lifetime.</p>
+<ul>
+<li>Measure efficiency</li>
+<li>Eliminate unneeded expense</li>
+<li>Consider using managed services</li>
+</ul>
+</li>
+</ul>
+<h1 id="best-practices-for-building-solution">Best Practices for Building Solution</h1>
+<p><strong>Design tradeoffs</strong>:</p>
+<ul>
+<li>Trade consistency, durability, and space for time and latency to deliver higher performance, prioritize speed to market of new features over cost.</li>
+<li>Benchmarking to achieve cost-optimal workload.</li>
+<li>Must be based on design decisions on empiricaal data.</li>
+</ul>
+<p><strong>Scalability</strong>: ensure that your architecture can handle changes in demand.</p>
+<ul>
+<li>Bad design (anti-pattern): Administrator manually launches new server after users can not access application.</li>
+<li>EC2 Auto Scaling react based on alarm after EC2 reach its threshold, so new server is ready before capacity is reached.</li>
+<li>For monitoring solution there is Amazon CloudWatch. Example usage: the threshold is when CPU utilization stayed above 60% for longer than 5 minutes.</li>
+<li>When alarm is triggered, Amazon EC2 Auto Scaling immediately launches a new instance.</li>
+<li>You should  also design system to scale in when demand drops off.</li>
+</ul>
+<p><strong>Automate</strong>: where is possible, automate the provisioning, termination, and configuration of resources.</p>
+<ul>
+<li>Anti-pattern: When application server crashes, users manually notify administrator and administrator manually launches and configures new server.</li>
+<li>When application server crashes, Amazon CloudWatch can automatically detect it, notifies administrator. Amazon EC2 Auto Scaling can automatically launches and configures identical server. It can also automatically logs action to a change management solution.</li>
+</ul>
+<p><strong>Treat resources as disposable</strong>: taking advantage of provisioned nature of cloud computing.</p>
+<ul>
+<li>Thinking infrastructure as software instead of hardware (flexible and easier to upgrade)</li>
+<li>Think that it is easy to migrate between instances or other resources, so you can quickly respond to changes.</li>
+<li>Automate deployment of new resources with identical configurations.</li>
+<li>Terminate resources that are not in use.</li>
+<li>Switch to new IP addresses automatically.</li>
+<li>Test updates on new resources and then replace old resources with update ones.</li>
+</ul>
+<p><strong>Use loosely coupled components</strong>: Architecture with independent components. Traditional infrastructures have chains of tightly integrated servers, each with a specific purposes. Hoewver, if one of the layers goes down, it affects many other systems.</p>
+<ul>
+<li>The example is the usage of load balancer that routes requests between the web servers and the application servers. If one of the application server goes down, the load balancer will automatically directing all traffic to healthy servers.</li>
+<li>Message queues is asynchronous service-to-service communication used in serverless architectures. It provides communication and coordination of distributed application.</li>
+</ul>
+<p><strong>Design services not servers</strong></p>
+<ul>
+<li>Considuer using containers or serverless solution</li>
+<li>Message queues handle communication between applications</li>
+<li>Static web assets are stored externally, such as on Amazon S3</li>
+<li>User authentication and user state storage are handled by managed AWS services.</li>
+</ul>
+<p><strong>Choose the right database solutio</strong>n. Traditional data centers and on-premises environments limits on available hardware and licences. It can constrains your choices of a data store solution. Consider these things:</p>
+<ul>
+<li>Read and write needs</li>
+<li>Total storage requirements</li>
+<li>Typical object size and nature of access of these objects</li>
+<li>Durability requirements</li>
+<li>Latency requirements</li>
+<li>Maximum concurrent users to support</li>
+<li>Nature of queries</li>
+<li>Required strength of integrity controls.</li>
+</ul>
+<p><strong>Avoid single points of failure</strong>, where possible use redundancy to prevent single points from bringing down an entire system. Assume everything fails, then design backward.</p>
+<ul>
+<li>Create a secondary standby database server and replicate the data.</li>
+</ul>
+<p><strong>Optimize for cost</strong>, cloud allows to trade capital expense for variable expense. Capital expense (capex) are funds that a company uses to acquire, upgrade, and maintain physical assets such as property, industrial buildings, or equipment. Variable expense is a cost model. You can pay only for the individual services you need and as long as you use them.</p>
+<p><strong>Use caching</strong>, cache can make the response goes faster and reduce network throughput by temporarily store data in an intermediary location.  Cloudfront stores a copy of a file at an edge location close to the user, and sends a copy to the user who made the request. This technique reduces latency and S3 usage cost.
+<img src="attachments/Pasted%20image%2020220916222552.png" alt=""></p>
+<p><strong>Secure your entire infrastructure</strong>, it isn&rsquo;t only about getting through the outer boundary of your infrastructure. It also involves individual environments and their components are secured from each other.</p>
+<ul>
+<li>Isolate parts of your infrastructure
+<ul>
+<li>Create security groups to determine who can send and receive traffic.</li>
+<li>The security group can reduce probability a security threat on one instance can spread to every other instance in the environment.</li>
+</ul>
+</li>
+<li>Encrypt data in transit and at rest.</li>
+<li>Enforce access control granularly using principle of least privilege</li>
+<li>Use multi-factor authentication (MFA)</li>
+<li>Use managed services</li>
+<li>Log access of resources</li>
+<li>Automate your deployment to keep security consistent.</li>
+</ul>
+<h1 id="aws-global-infrastructure">AWS Global Infrastructure</h1>
+<h3 id="regions">Regions</h3>
+<p>AWS cloud infrastructure is built around Regions. AWS has 22 region world wide. An AWS Region is a physical geographical location with two or more Availability Zones.</p>
+<p>Communication between regions uses AWS backbone network infrastructure. Some of AWS regions are disabled by default. You must enable these Regions before you can use them. To achieve fault tolerance and stability, Regions are isolated from one another.</p>
+<h3 id="availability-zone">Availability Zone</h3>
+<p>Each AWS Region consists of two or more isolated locations that are known as Availability Zones. Each Availability Zone comprises one or more data centers and designed as an independent failure zone. One Availability Zones may have as many as six data centers, however no data center can be a part of two Availability Zones.</p>
+<p><img src="attachments/Pasted%20image%2020220916224458.png" alt=""></p>
+<p>Distributing applications across multiple Availability Zones enables them to remain resilient in most failure situations, including natural disasters or system failures.</p>
+<h3 id="local-zones">Local Zones</h3>
+<p>AWS Local Zone location is an extension of an AWS Region. It is a new type of AWS infrastructure deployment that place AWS services closer to large population. With Local Zones, you can run latency-sensitive portions of applications closer to end users. Local Zones beneficial to low-latency use cases, for example media and entertainment, real-time gaming, reservoir simulation, electronic design automation, and machine learning.</p>
+<h3 id="data-centers">Data Centers</h3>
+<p>Location where data resides and processing happen. You do not specify a data center for the deployment of resources. It is the location where the actual data resides. All data centers configured to move customer data traffic away in case of failures.</p>
+<h3 id="aws-points-of-presence">AWS Points of Presence</h3>
+<p><img src="attachments/Pasted%20image%2020220916225313.png" alt="">
+To deliver content to end user with lower latency, Amazon CloudFront uses a global network over 200 points of presences that are comprised of Edge Locations and Regional Edge Caches.</p>
+<p>Edge locations are located in NA, EU, Asia, Australia, South America, Middle East, Africa, and China. Edge locations support AWS services like Amazon Route 53 and Amazon CloudFront.</p>
+<p>Regional edge caches are used by default with Amazon CloudFront. They are used when you have content that is not accessed requently enough to remain in an edge location. Regional edge caches absorb this content and provide an alternative to fetching the content from he origin server.</p>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf">https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf</a></li>
+<li><a href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html">Security Pillar Whitepaper</a></li>
+<li><a href="https://d1.awsstatic.com/whitepapers/architecture/AWS-Operational-Excellence-Pillar.pdf">Operational Excellence Pillar</a></li>
+<li><a href="https://d1.awsstatic.com/whitepapers/architecture/AWS-Reliability-Pillar.pdf">https://d1.awsstatic.com/whitepapers/architecture/AWS-Reliability-Pillar.pdf</a></li>
+<li><a href="https://d1.awsstatic.com/whitepapers/architecture/AWS-Performance-Efficiency-Pillar.pdf">https://d1.awsstatic.com/whitepapers/architecture/AWS-Performance-Efficiency-Pillar.pdf</a></li>
+<li><a href="https://aws.amazon.com/message-queue/">https://aws.amazon.com/message-queue/</a></li>
+<li><a href="https://aws.amazon.com/cloudfront/features/?whats-new-cloudfront.sort-by=item.additionalFields.postDateTime&amp;whats-new-cloudfront.sort-order=desc#Amazon_CloudFront_Infrastructure">https://aws.amazon.com/cloudfront/features/?whats-new-cloudfront.sort-by=item.additionalFields.postDateTime&amp;whats-new-cloudfront.sort-order=desc#Amazon_CloudFront_Infrastructure</a></li>
+</ul>
+
+      </article>
+    </div>
+  </section>
+</div>
+
+      </main><footer class="footer">
+  <span>&copy; 2022 <a href="https://devismail2y.github.io/notashoppingnote/">Not A Shopping Note</a></span>
+</footer>
+
+    </div>
+  </body>
+</html>
