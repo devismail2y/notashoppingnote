@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+
+<title>IoT Security 2 - Vulnerability Threat and Countermeasures - Not A Shopping Note</title>
+
+
+
+<link rel="stylesheet" href="/notashoppingnote/scss/style.min.6d03e212cc1ce3781740114de93884b9fcdf6e46dc6076ccb066b1f3acdadafc.css">
+</head>
+  <body>
+    <header class="header">
+  <div class="header__title">
+    <a href="https://devismail2y.github.io/notashoppingnote/">Not A Shopping Note</a>
+  </div>
+  <div class="headerNav">
+    <ul class="headerNav__items">
+      <li>
+        <a href="https://devismail2y.github.io/notashoppingnote/search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="container">
+      <main class="main">
+        
+<div class="post">
+  <div class="post__header">
+    
+    <img class="post__image" src="/notashoppingnote/new-notashoppingnote/iot-security-2/IoTSec.jpg">
+  </div>
+
+  
+  <div class="post__tags">
+    
+      <a class="post__tag" href="https://devismail2y.github.io/notashoppingnote/tags/iot-security">IoT Security</a>
+    
+  </div>
+  
+
+  <section class="post__content">
+    <h1 id="title">IoT Security 2 - Vulnerability Threat and Countermeasures</h1>
+    <div>
+      <article>
+          <h1 id="pillar-of-information-security">Pillar of Information Security</h1>
+<p>Five pillars of cybersecurtiy:</p>
+<ul>
+<li>Confidentiality</li>
+<li>Integrity</li>
+<li>Availability</li>
+<li>Authentication</li>
+<li>Non-repudiation</li>
+</ul>
+<p>Plus two more in IoT</p>
+<ul>
+<li><strong>Resilience</strong>: maintain state of awareness and an accepted level of operational normalcy in response to disturbances including from the nature.</li>
+<li><strong>Safety</strong>: safe from causing hurt, injury, or loss.</li>
+</ul>
+<h1 id="tvr-threat-vulnerability-risk">TVR (Threat Vulnerability Risk)</h1>
+<ul>
+<li>Threat: potential of attacks/exploit.
+<ul>
+<li>Threat actor (source): who do the threat.</li>
+<li>Threat: hardware, software, environmental, supply chain, degradation, etc.</li>
+<li>Can target safety: transfer functions, state filters (kalman filters) and other inner control loop artifacts.</li>
+<li>Malicious hacking drives for-profit marketplace of its own in dark web.</li>
+</ul>
+</li>
+<li>Vulnerability: weakness either in design, integration, or operation.
+<ul>
+<li>Deficiencies in a device&rsquo;s physical protection</li>
+<li>Software quality</li>
+<li>Configuration</li>
+<li>Suitability of protocol security for its environment</li>
+<li>Appropriateness of the protocols themselves.</li>
+</ul>
+</li>
+<li>Risks: quantitative or qualitative methods of evaluation. It one&rsquo;s exposure to loss.
+<ul>
+<li>How large the impact of attack?</li>
+<li>How valuable the target may be to attackers?</li>
+<li>Anticipated skill and motivations of the attackers.</li>
+<li>A prior knowledge of a system&rsquo;s vulnerabilities (those discovered during threat modelling, public advisories, penetration testing, and so on).</li>
+</ul>
+</li>
+</ul>
+<p>Common IoT Attack</p>
+<ul>
+<li>Wired and wireless scanning</li>
+<li>Protocol attacks</li>
+<li>Eavesdropping</li>
+<li>Cryptographic and key management attacks</li>
+<li>Spoofing and masquerading</li>
+<li>Operating system and application integrity attacks</li>
+<li>Denial of service and jamming</li>
+<li>Physical security attacks</li>
+<li>Access control attacks (Privilege Escalation)</li>
+</ul>
+<p>Countermeasures:<br>
+<img src="attachments/Pasted%20image%2020220905141501.png" alt=""></p>
+<h1 id="attack-trees">Attack Trees</h1>
+<p>Using SecuriTree tools build by <a href="https://www.amenaza.com">Amenaza</a>. It assists you in modelling each attack goal by establishing indicators such as the following:</p>
+<ul>
+<li>Capabilities of the attacker: includes technical ability, noticeability, cost of the attack</li>
+<li>Behaviours and probabilities</li>
+<li>Impact of the attack</li>
+<li>Benefits to the attacker: related to the attacker&rsquo;s motivation</li>
+<li>abcd</li>
+<li>Detriments to the attacker: related to the attacker demotivators</li>
+</ul>
+<p>The example of attack trees:
+<img src="attachments/Pasted%20image%2020220918122116.png" alt=""></p>
+<p>Legends:</p>
+<ol>
+<li>
+<p>AND Operator, it means the child node must be achieved to complete the objective.
+<img src="attachments/Pasted%20image%2020220918120528.png" alt=""></p>
+</li>
+<li>
+<p>OR Operator, it means at least one child node must be achieved to complete the objective.
+<img src="attachments/Pasted%20image%2020220918120555.png" alt=""></p>
+</li>
+<li>
+<p>Representing the leaf node (no subtree under the element). It represents the actual attack vector (entry points) into the model.
+<img src="attachments/Pasted%20image%2020220918121840.png" alt=""></p>
+</li>
+</ol>
+<p>Attacker has goal to re-directing Unmanned Aircraft Systems (UAS), which is positio of a drone while in flight. There are top-level activities of attack tree.</p>
+<p><img src="attachments/Pasted%20image%2020220905142229.png" alt=""></p>
+<ul>
+<li>Redirect UAS represents the end objective of the attacker (using OR Operator). This can be achieved by these methods:
+<ul>
+<li>Corrupting its navigation database that maps named locations to positions in space (latitude, longitude, and altitude).</li>
+<li>Spoofing GPS: attacker could choose actif RF-based GPS attack to generate false GPS timing, so the drone interprets a false location.</li>
+<li>Spoofing GCS (Ground Control Station): attacker spoof drone&rsquo;s operator and attempt to send malicious routing command.</li>
+</ul>
+</li>
+</ul>
+<p>Under the <strong>Corrupt Navigation Database</strong> (uses AND operator).
+<img src="attachments/Pasted%20image%2020220918121318.png" alt=""></p>
+<ul>
+<li>Exploit transitive trust: attacker compromise other server which is trusted by the navigation database to accomplish attack on the navigation database itself.</li>
+<li>Compromise of the navigation database server: attacker successfully gain the database server.</li>
+<li>Modify GIS (Geographic Information System) tables: attacker tamper the navigation database.</li>
+</ul>
+<p>Attack trees can generate interesting reports, such as a graph of willingness-to-capability ratios. The graph can help you to prioritize the security controls.</p>
+<h1 id="fault-trees">Fault Trees</h1>
+<p>Safety and reliability engineering&rsquo;s principal modeling tool is called Fault Tree Analysis (FTA). For example, FAA safety requirements for aircraft needs significant levels of redundancy. This risk management of FAA for example lean heavily on FTA. For example it can account for the rate at which an aircraft&rsquo;s braking system may fail naturally.</p>
+<p>Fault tree and attack tree differences:</p>
+<ul>
+<li>Fault tree are not based on intelligently planned attacks.</li>
+<li>Fault trees are traversed based on stocahstic process (failure/fault rates) from each leaf through the dependent, intermediate nodes.</li>
+<li>Each fault tree leaf is completely independent (fault occur randomly AND independently of each other) of all other leaves of the tree.</li>
+</ul>
+<h1 id="recommendation-for-high-safety-and-security-assurances">Recommendation for High Safety and Security Assurances</h1>
+<ul>
+<li>Integrate FTA into safety-critical IoT device and system engineering methodologies.</li>
+<li>Ensure that the actual IoT use cases are represented in FTA.</li>
+<li>Ensure the security engineers have a seat at the table.</li>
+<li>As security engineers identify security controls, determine if the controls impact the fault-tolerance design.</li>
+<li>To prevent safety-security threats, you have to carefully design
+<ul>
+<li>Safety mitigations that don&rsquo;t undermine needed security controls.</li>
+<li>Security mitigations that don&rsquo;t diminish safety controls.</li>
+</ul>
+</li>
+<li>Sometimes, compromises have to made that result in residual, accepted on both safety and security.</li>
+</ul>
+<h2 id="example-anatomy-of-a-deadly-attack">Example Anatomy of a Deadly Attack</h2>
+<p>This example highlights the convergence of engineering disciplines at play in the planning, execution, and defense.</p>
+<ul>
+<li>Prerequisistes:
+<ul>
+<li>Attacker possesses significant aircraft avionics system knowledge.</li>
+<li>Attacker develops a customized exploit for aircraft control system.</li>
+</ul>
+</li>
+<li>The attacker compromises an airline&rsquo;s ground maintenance network and successfully compromise airliner&rsquo;s Integrated Modular Avionics (IMA) system.</li>
+<li>The attacker physically or logically tamper the aircraft&rsquo;s legitimate software/firmware binary with the chosen exploit.</li>
+<li>The software update is uploades, the malicious code begins to run and reprogram the controller.</li>
+<li>The malicious microcontroller binary overwrites the notch filter mechanism, eliminating the system&rsquo;s pitch  mode dampening of the aircraft&rsquo;s natural and harmonic structural frequencies.</li>
+<li>If aircraft begin its flight and hits mild turbulence after takeoff, notch filter failed to function properly and causes the wing to disintegrate.</li>
+</ul>
+<p>Recommended mitigation:</p>
+<ul>
+<li>Avionics binaries were cryptographically signed by the manufacturer, so integrity can be protected end-to-end.</li>
+<li>Do not rely on Cyclic Redundancy Check (CRC), attacker can easily find ways of thwarting it. CRC were designed to detect accidental fault, not intelligently designed attack.</li>
+</ul>
+<h1 id="car-exploitation">Car Exploitation</h1>
+<p>Remote Car Exploitation: <a href="http://illmatics.com/Remote%20Car%20Hacking.pdf">http://illmatics.com/Remote%20Car%20Hacking.pdf</a>. Automotive vehicles implement Controller Area Network (CAN) which allows individual components, known as Electronic Control Units (ECUs), to communicate. These ECUs include safety-critical components, such as braking system, power steering, etc. If there is no security validation of the message, attacker can communicate directly with ECU.'</p>
+<h1 id="typical-attack-of-iot">Typical Attack of IoT</h1>
+<ul>
+<li>Wireless reconnaissance and mapping</li>
+<li>Security protocol attacks</li>
+<li>Phyiscal security attacks</li>
+<li>Application security attacks</li>
+</ul>
+<h1 id="threat-modelling-an-iot-system">Threat Modelling an IoT System</h1>
+<p>Based from the book by Adam Shostack, Threat Modelling: Designing for Security.
+<img src="attachments/Pasted%20image%2020220918130725.png" alt=""></p>
+<ol>
+<li>Identify assets: understanding of what must be protected</li>
+<li>Create a system/architecture overview: what the functionality of the IoT system and how the attacker could misuse the system.</li>
+<li>Decompose the system: understanding the data lifecycle as it flows through the system. This allows us to identify weak points.</li>
+<li>Identify threats: who and how the attacker can compromise the system? The populare STRIDE model can be applied to IoT deployments.</li>
+<li>Document the threats</li>
+<li>Rate the threats: based on the likehood and impact of each threat. You can use DREAD (Damage Reproducibility Exploitability Affected_users Discoverability) and give score 1-10 for each threat.</li>
+</ol>
+
+      </article>
+    </div>
+  </section>
+</div>
+
+      </main><footer class="footer">
+  <span>&copy; 2022 <a href="https://devismail2y.github.io/notashoppingnote/">Not A Shopping Note</a></span>
+</footer>
+
+    </div>
+  </body>
+</html>

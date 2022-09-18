@@ -5,7 +5,18 @@
     <link>https://devismail2y.github.io/notashoppingnote/tags/iot-security/</link>
     <description>Recent content in IoT Security on Not A Shopping Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 14 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://devismail2y.github.io/notashoppingnote/tags/iot-security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://devismail2y.github.io/notashoppingnote/tags/iot-security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IoT Security 2 - Vulnerability Threat and Countermeasures</title>
+      <link>https://devismail2y.github.io/notashoppingnote/new-notashoppingnote/iot-security-2/</link>
+      <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://devismail2y.github.io/notashoppingnote/new-notashoppingnote/iot-security-2/</guid>
+      <description>Pillar of Information Security Five pillars of cybersecurtiy:
+Confidentiality Integrity Availability Authentication Non-repudiation Plus two more in IoT
+Resilience: maintain state of awareness and an accepted level of operational normalcy in response to disturbances including from the nature. Safety: safe from causing hurt, injury, or loss. TVR (Threat Vulnerability Risk) Threat: potential of attacks/exploit. Threat actor (source): who do the threat. Threat: hardware, software, environmental, supply chain, degradation, etc. Can target safety: transfer functions, state filters (kalman filters) and other inner control loop artifacts.</description>
+    </item>
+    
     <item>
       <title>IoT Security 1 - A Brave New World</title>
       <link>https://devismail2y.github.io/notashoppingnote/new-notashoppingnote/iot-security-1/</link>
