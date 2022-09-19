@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+
+<title>IoT Security 4 - The IoT Security Lifecycle - Not A Shopping Note</title>
+
+
+
+<link rel="stylesheet" href="/notashoppingnote/scss/style.min.6d03e212cc1ce3781740114de93884b9fcdf6e46dc6076ccb066b1f3acdadafc.css">
+</head>
+  <body>
+    <header class="header">
+  <div class="header__title">
+    <a href="https://devismail2y.github.io/notashoppingnote/">Not A Shopping Note</a>
+  </div>
+  <div class="headerNav">
+    <ul class="headerNav__items">
+      <li>
+        <a href="https://devismail2y.github.io/notashoppingnote/search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="container">
+      <main class="main">
+        
+<div class="post">
+  <div class="post__header">
+    
+    <img class="post__image" src="/notashoppingnote/new-notashoppingnote/iot-security-4/IoTSec.jpg">
+  </div>
+
+  
+  <div class="post__tags">
+    
+      <a class="post__tag" href="https://devismail2y.github.io/notashoppingnote/tags/iot-security">IoT Security</a>
+    
+  </div>
+  
+
+  <section class="post__content">
+    <h1 id="title">IoT Security 4 - The IoT Security Lifecycle</h1>
+    <div>
+      <article>
+          <h1 id="penetration-testing">Penetration Testing</h1>
+<p>Assessing the organization&rsquo;s IoT requires testing hardware and software. Penetration testing should be done regularly throughout the lifecycle. Many regulations also require third-party penetration tests as it is a good security practice.</p>
+<p>Furthermore, blue teams should ealuate the security posture while read teams are conducting their exercies.</p>
+<h2 id="red-and-blue-teams">Red and Blue Teams</h2>
+<p>Penetration testing, with the goal of find and report vulnerabilities, should be limited to most important aspects of an implementation. You should consider what is of most business value to the organization (data privacy, business continuity, etc) and conduct the security test accordingly.</p>
+<p>Penetration testing can be conducted as either whitebox or blackbox.</p>
+<ul>
+<li>Whitebox: provides more thorough evaluation with the parcitipation of the whole team to find weaknesses.</li>
+<li>Blackbox: a test to mimic outside attackers.</li>
+</ul>
+<p>These items should be tested on the penetration test campaign:</p>
+<ul>
+<li>Is there is any default password in the production?</li>
+<li>Is there any default cryptographic keys used in the production?</li>
+<li>Is there any default configurations used in the production? (such as default port)</li>
+<li>Is there any insecure pairing process that being implemented?</li>
+<li>Is there any firmware update processes on devices and within the infrastructure?</li>
+<li>Is there any unencrypted data streams from IoT to their gateways?</li>
+<li>Is there any non-secure RF (Bluetooth, ZigBee, ZWave, etc) configurations?</li>
+</ul>
+<h2 id="hardware-security-evaluation">Hardware Security Evaluation</h2>
+<p>Testers need to understand whether hardware devices introduce new weaknesses in a system. A typical hardware pentesting would go as follow:</p>
+<ol>
+<li>Identify whether the device is in a protected or unprotected location. Can it be stolen or swapped out? Is there any online reporting mechanism to notify administrator when it is stolen?</li>
+<li>Evaluate tamper protections and break open the device.</li>
+<li>Attempt to dump memory and try to steal sensitive information.</li>
+<li>Attempt to download the firmware for analysis.</li>
+<li>Attempt to upload new firmware and make firmware operational.</li>
+</ol>
+<h2 id="airwave-security-evaluation">Airwave Security Evaluation</h2>
+<p>Wireless communication that widely implemented by IoT devices are a potential back doors into an enterprise. It is important to take time during penetration tests to determine if it is possible to leave rouge RF devices behind that may able to monitor or exfiltrate data covertly.</p>
+<h2 id="iot-penetration-test-tools">IoT Penetration Test Tools</h2>
+<p>There is a list of tools that may be useful during IoT penetration testing.</p>
+<ol>
+<li>BlueMaho: Bluetooth security tools.</li>
+<li>Bluelog: Identify discoverable BT devices.</li>
+<li>Crackle: Cracking BLE encryption.</li>
+<li>SecBee: ZigBee vulnerability scanner.</li>
+<li>KillerBee: Evaluating security posture of ZigBee networks.</li>
+<li>Scapy-radio: Wifi pentesting tool that support for testing Bluetooth-LE, 802.15.4-based protocols, and ZWave.</li>
+<li>Wireshark: Sniffing tool.</li>
+<li>Aircrack-ng: Wireless security tool for exploiting WiFi networks.</li>
+<li>Chibi: An MCU that integrate with open-sourced ZigBee stack.</li>
+<li>Hardsploit: Framework to test IoT exploitability.</li>
+<li>HackRF: Flexible and turnkey platform for RX and TX 1 MHz to 6 MHz.</li>
+<li>Shikra: A device that allows the tester to interface to different data interfaces, such as JTAG, SPI, I2C, UART, and GPIO.</li>
+</ol>
+<p>The teams should keep track of the latest vulnerabilites in IoT example. The useful location is <strong>National Vulnerability Database</strong>, <a href="https://nvd.nist.gov">https://nvd.nist.gov</a>.  In some cases, vulnerabilites may not be directly in the IoT devices, but in the software and systems to which they connect.</p>
+<h1 id="compliance-monitoring">Compliance Monitoring</h1>
+<p>For example <strong>Center for Internet Security (CIS)</strong> released an addendum to the 20 critical controls that details coverage of each control within the IoT. This document provides a starting point for the security of the IoT system.</p>
+<h1 id="asset-and-configuration-management">Asset and Configuration Management</h1>
+<p>Implementing analytic tools to determine when asset requires maintenance and detect in real time when an asset has gone offline. Imaging a device, such as robot while on manufacturing floor, enables us to predict failure.</p>
+<p>Consider a drone as an IoT endpoint, you can document these items to perform failure prediction.</p>
+<ul>
+<li>Registration number</li>
+<li>Tail number</li>
+<li>Sensor payloads</li>
+<li>Manufacturer</li>
+<li>Firmware versions</li>
+<li>Maintenance logs</li>
+<li>Flight performance characteristics.</li>
+</ul>
+<p>Ideally these items self-monitored by some sensors to determine drone&rsquo;s condition, such as</p>
+<ul>
+<li>Temperature</li>
+<li>Strain</li>
+<li>Torque</li>
+</ul>
+<p>To properly perform routine maintenance, there are two confugurations that you should consider:</p>
+<ul>
+<li>IoT asset components (i.e. firmware) are fully integrated and updated by the IoT device vendor in a single update. Always ensure the new firmware is digitally signed to maintain its authenticity and integrity.</li>
+<li>IoT asset is developed modularly with many different technologies that must each be maintained and separately updated.</li>
+</ul>
+<p>Keeping track of assets and their states is essential to maintaining a healthy security posture. If possible keep track of these devices through an automated inventory management (for example using SIEM).</p>
+<h1 id="incident-management">Incident Management</h1>
+<p>Impact of compromises or failures in IoT system include financial loss, reputational damage, and even personnel safety. Incident responders should familiar with business continuity plans to determine the appropriate remidiation steps.</p>
+<p>Microgrids provide a valuable example for incident management. It provides self-contained energy generation, distribution, and management system that may or may not be connected to a larger power distribution infrastructure. Identifying an incident involving one of PLCs may require that the responders first understand the impact of taking PLC offline. They must work very closely with the impacted business operations during the response.</p>
+<p>Well-documented assets and system descriptions bring a big help to incident management.</p>
+<h2 id="forensics">Forensics</h2>
+<p>Keeping as much data s possible from each IoT endpoint can aid in investigation. However, in IoT system the assets themselves may not be available (such as stolen), may not be capable of storing useful data, or may have been tampered with. Gaining data that was generated by compromised IoT devices gives a good starting point to the investigation.</p>
+<h1 id="disposal">Disposal</h1>
+<p>The disposal phase can apply to the system as a whole or to and individual component. Proper disposal procedures can prevent adversaries to gain physical access to IoT devices (such as dumpster diving for old electronics).</p>
+<h2 id="zeroisation">Zeroisation</h2>
+<p>If IoT devices are configured with cryptographic material that allows them to join local networks or communicate with other remote devices, then that materal should be properly wiped prior to their disposal. Ensure there are policies and procedures to remove these keys.</p>
+<h2 id="data-purging">Data Purging</h2>
+<p>Gateway devices should also be inspected thoroughly when being decommissioned from a system. These devices may have latent data stored on them.</p>
+<h1 id="data-archive-management">Data Archive Management</h1>
+<p>The amount of time that data must be kept depends on specific requirements and regulations. To satisfy such regulations may require data warehousing capability, such as Amazon S3, etc.</p>
+
+      </article>
+    </div>
+  </section>
+</div>
+
+      </main><footer class="footer">
+  <span>&copy; 2022 <a href="https://devismail2y.github.io/notashoppingnote/">Not A Shopping Note</a></span>
+</footer>
+
+    </div>
+  </body>
+</html>
