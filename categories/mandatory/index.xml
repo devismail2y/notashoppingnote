@@ -5,7 +5,22 @@
     <link>https://devismail2y.github.io/notashoppingnote/categories/mandatory/</link>
     <description>Recent content in Mandatory on Not A Shopping Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://devismail2y.github.io/notashoppingnote/categories/mandatory/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://devismail2y.github.io/notashoppingnote/categories/mandatory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud 4 - Compute Layer</title>
+      <link>https://devismail2y.github.io/notashoppingnote/new-notashoppingnote/cloud-4/</link>
+      <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://devismail2y.github.io/notashoppingnote/new-notashoppingnote/cloud-4/</guid>
+      <description>Compute Layer www.awsacademy.com
+Four compute model categories:
+Virtual Machines (VMs):
+EC2: elastic and sizeable virtual servers in cloud Lightsail: Virtual Private Server to run simple workloads Containers
+Elastic Container Service (ECS): runs Docker container applications on AWS PaaS
+Elastic Beanstalk: Runs web applications and services that are developed in Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker. Serverless
+AWS Lambda: Serverless compute solution that runs Java, Go, PowerShell, Node.js, C#, Python, or Ruby.</description>
+    </item>
+    
     <item>
       <title>Cloud 1 - Introduction</title>
       <link>https://devismail2y.github.io/notashoppingnote/new-notashoppingnote/cloud-1/</link>

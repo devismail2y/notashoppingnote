@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+
+<title>Cloud 1 - Introduction - Not A Shopping Note</title>
+
+
+
+<link rel="stylesheet" href="/notashoppingnote/scss/style.min.6d03e212cc1ce3781740114de93884b9fcdf6e46dc6076ccb066b1f3acdadafc.css">
+</head>
+  <body>
+    <header class="header">
+  <div class="header__title">
+    <a href="https://devismail2y.github.io/notashoppingnote/">Not A Shopping Note</a>
+  </div>
+  <div class="headerNav">
+    <ul class="headerNav__items">
+      <li>
+        <a href="https://devismail2y.github.io/notashoppingnote/search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="container">
+      <main class="main">
+        
+<div class="post">
+  <div class="post__header">
+    
+    <img class="post__image" src="/notashoppingnote/new-notashoppingnote/cloud-4inprogress/cloud.jpg">
+  </div>
+
+  
+  <div class="post__tags">
+    
+      <a class="post__tag" href="https://devismail2y.github.io/notashoppingnote/tags/cloud-computing">Cloud Computing</a>
+    
+  </div>
+  
+
+  <section class="post__content">
+    <h1 id="title">Cloud 1 - Introduction</h1>
+    <div>
+      <article>
+          <h1 id="compute-layer">Compute Layer</h1>
+<p><a href="https://www.awsacademy.com">www.awsacademy.com</a></p>
+<p><img src="attachments/Pasted%20image%2020221008123537.png" alt=""></p>
+<p>Four compute model categories:</p>
+<ul>
+<li>
+<p>Virtual Machines (VMs):</p>
+<ul>
+<li>EC2:  elastic and sizeable virtual servers in cloud</li>
+<li>Lightsail: Virtual Private Server to run simple workloads</li>
+</ul>
+</li>
+<li>
+<p>Containers</p>
+<ul>
+<li>Elastic Container Service (ECS): runs Docker container applications on AWS</li>
+</ul>
+</li>
+<li>
+<p>PaaS</p>
+<ul>
+<li>Elastic Beanstalk: Runs web applications and services that are developed in Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker.</li>
+</ul>
+</li>
+<li>
+<p>Serverless</p>
+<ul>
+<li>AWS Lambda: Serverless compute solution that runs Java, Go, PowerShell, Node.js, C#, Python, or Ruby.</li>
+<li>AWS Fargate: serverless compute platform for containers.</li>
+</ul>
+</li>
+</ul>
+<p>For the specialized solutions:</p>
+<ul>
+<li>AWS Outposts: runs AWS infrastructure and services on-premise</li>
+<li>AWS Batch: runs batch jobs (running high-volume repetitive data jobs with minimal user interaction) at any scale</li>
+</ul>
+<h1 id="introduction-to-ec2">Introduction to EC2</h1>
+<p>Elastic Compute Cloud:</p>
+<ul>
+<li>Easily increase or decrease the number of servers through automation.</li>
+<li>Run application that require compute resources, such as CPU and RAM</li>
+<li>Pay only for the capacity that you use</li>
+</ul>
+<p><img src="attachments/Pasted%20image%2020221008125155.png" alt=""></p>
+<p>EC2 instances are located in AWS Availability Zones. Each virtual machine runs an OS, such as Windows or Amazon Linux.</p>
+<p>These virtual machine runs on top of a hypervisor. Hypervisor provides EC2 instance with access to hardware resources, for instance processors, memory, and storage.</p>
+<p>Storage:</p>
+<ul>
+<li>Instance store (ephemeral storage): physically attached to the host and provides temporary block-level storage to an instance. The data stored not persistent through instance stops, terminations, or hardware failures. These information stored in instance store: buffers, caches, and scratches data.</li>
+<li>Amazon Elastic Block Storage (EBS) is persistent block storage volumes (the data will be persisted). This block storage is available for encryption. Many EC2 instances use AmazonEBS for the boot disk and other storage needs. There are EBS optimized instances that provide faster access to an attached EBS volume.</li>
+</ul>
+<p>Use Amazon EC2 when you need:</p>
+<ul>
+<li>Complete control up to computing resources, even you can choose x76 or ARM architecture.</li>
+<li>Optimizing compute costs (on-demand, reserved, and spot + saving plans).</li>
+<li>Ability to run any type of workload.</li>
+</ul>
+<h3 id="provisioning-an-ec2-instance">Provisioning an EC2 instance</h3>
+<p>Provision EC2 based on these parameters:</p>
+<ul>
+<li>Amazon Machine Image (AMI) - base software configuration.</li>
+<li>Instance type- combination of CPU, memory, storage, and networking capacity</li>
+<li>Network placement and addressing - network placement and security control</li>
+<li>Assumed role (optional) - attach AWS Identity and Access Management (IAM), granting permission for accessing AWS services to applications that run on the instance or users that are connected to the instance.</li>
+<li>User data - initialize or customize instance configuration by specifying a user data script that automatically runs when the instance is launched.</li>
+<li>Storage - type of storage to store the root or boot volume.</li>
+<li>Security group - which ports network traffic is allowed on.</li>
+<li>Key pair - is used to remotely access the instances, such as RDP or SSH.</li>
+</ul>
+<h2 id="amazon-machine-image-ami">Amazon Machine Image (AMI)</h2>
+<p><img src="attachments/Pasted%20image%2020221008132956.png" alt=""></p>
+<p>Includes information that is needed to launch an instance, including:</p>
+<ul>
+<li>Template for the root volume (guest OS and other installed software)</li>
+<li>Launch permission - which AWS accounts can access the AMI</li>
+<li>Block device mapping - specifies any storage volumes to attach to the instance</li>
+</ul>
+<p>Benefits of using AMI:</p>
+<ul>
+<li>Repeatability - contains full configuration and content of an EC2 instance. It can repeatedly launch multiple instances with efficiency and precision.</li>
+<li>Reusability - instances that are launched from the same AMI are exact replicas of each other.</li>
+<li>Recoverability - if instance fails, you can replace it by launching a new instance from the same AMI.</li>
+</ul>
+<p>Consideration when using AMI:</p>
+<ul>
+<li>Region - AMI exists only in a specific region. However you can copy AMI from one to another region as needed.</li>
+<li>Operating System</li>
+<li>Storage for the root device - All AMIs are categorized as either Amazon EBS-backed or instance store-backed.</li>
+<li>Architecture - 32 bit, 64 bit, ARM, etc</li>
+<li>Virtualization type - how they boot or can they take advantage of special hardware extension.
+<ul>
+<li>Paravirtual (PV) - run on host that does not have explicit support for virtualization.</li>
+<li>Hardware Virtual Machine (HVM) - Fully virtualized of hardware and boot, it provides ability to run an OS directly on top of a virtual machine without any modification. Use this for performance.</li>
+</ul>
+</li>
+</ul>
+<p>Sources of AMI:</p>
+<ul>
+<li>Quick starts - AMIs that are built by AWS
+<ul>
+<li>Windows</li>
+<li>Linux: Amazon, Ubuntu, RHEL, SUSE, Fedora, Debian, CentOS, Gentoo, Oracle, and FreeBSD</li>
+<li>It also enables you to create your own AMI from an EC2 instance</li>
+</ul>
+</li>
+<li>Marketplace: by vendors with specific use cases</li>
+<li>Community built: not evaluated by AWS, use at your own risk.</li>
+</ul>
+<p>EBS vs Instance backed:
+<img src="attachments/Pasted%20image%2020221008134921.png" alt=""></p>
+<p>Creating a new AMI:</p>
+<ol>
+<li>Choose source AMI, can be provided by AWS or build from virtual machine that you import. Then launch an EC2 instance from this AMI.</li>
+<li>When you launch that instance, you will get an unmodified instance.</li>
+<li>Optionally you can create a golden instance, a virtual machine that you configure with the specific OS and application settings that you want. Then capture it as a new AMI.</li>
+<li>For an EBS-backed AMI, capture the new AMI by using Amazon EC2 AMI tools to create a bundle for the instance root volume, and upload the bundle to an S3 bucket. Then you must manually register the new AMI.</li>
+<li>The AMI can be used to launch new instances within the same AWS Region. The new AMI can act as a new starter AMI.</li>
+<li>Optionally you can copy the new AMI, so it is enabled to other regions.</li>
+</ol>
+<h3 id="amazon-ec2-instance-lifecycle">Amazon EC2 instance lifecycle</h3>
+<p><img src="attachments/Pasted%20image%2020221008135420.png" alt=""></p>
+<h2 id="ec2-image-builder">EC2 Image Builder</h2>
+<p>Automates creation, management, and deployment of golden VM images. It provides</p>
+<ul>
+<li>Graphical interface to create image-building pipelines</li>
+<li>Amazon EC2 AMIs and on-premises VM images</li>
+<li>Secure, validated, and up-to-dated images</li>
+<li>Enforces version control</li>
+</ul>
+<p>Steps of Image Builder</p>
+<ol>
+<li>Identify source image to build a new image</li>
+<li>Select build components software for installation or customization.</li>
+<li>Select hardening tests that should be run each time the image pipeline runs. This steps reduces risk of incompatibility.</li>
+<li>Specify a build schedule to identify how often this pipeline should run, and when.</li>
+<li>Define whether you want the image to be distributed to selected Regions.</li>
+</ol>
+<h1 id="selecting-an-ec2-instance-type">Selecting an EC2 Instance Type</h1>
+<p><img src="attachments/Pasted%20image%2020221008141303.png" alt=""></p>
+<p>m5d.xlarge</p>
+<ul>
+<li>m = family</li>
+<li>5 = generation</li>
+<li>.xlarge = size</li>
+</ul>
+<p>You can add additional capabilites:</p>
+<ul>
+<li>HDD or SSD for the root EBS.</li>
+</ul>
+<h2 id="instance-types">Instance types</h2>
+<p>General purpose: M5, T3, A1</p>
+<ul>
+<li>Web or application servers</li>
+<li>Gaming servers</li>
+<li>Analytics applications</li>
+<li>Test environments</li>
+</ul>
+<p>Compute optimized: C5, C5n</p>
+<ul>
+<li>Batch processing</li>
+<li>Distributed analytics</li>
+<li>Ad server engines</li>
+<li>Multiplayer gaming</li>
+<li>Video encoding</li>
+<li>High performance computing (HPC)</li>
+</ul>
+<p>Memory optimized: R5, X1, HMI</p>
+<ul>
+<li>In-memory caches</li>
+<li>High-performance databases</li>
+<li>Big data analysis</li>
+</ul>
+<p>Accelerated computing: P3, G4, F1</p>
+<ul>
+<li>Machine learning &amp; artificial intelligence</li>
+<li>HPC</li>
+<li>Graphics</li>
+</ul>
+<p>Storage optimize: I3 (high I/O), D2 &amp; H1 (dense storage)</p>
+<ul>
+<li>High-performance databases</li>
+<li>Real-time analytics</li>
+<li>Transactional workloads</li>
+<li>NoSQL databases</li>
+<li>Big data</li>
+<li>Data warehouse</li>
+<li>Log processing</li>
+</ul>
+<h2 id="how-to-choose-instance-type">How to choose instance type</h2>
+<ul>
+<li>Meeting your needs
+<ul>
+<li>Performance</li>
+<li>Cost</li>
+</ul>
+</li>
+<li>AWS Compute Optimizer (<a href="https://aws.amazon.com/compute-optimizer/">https://aws.amazon.com/compute-optimizer/</a>)</li>
+<li>Generally, select the latest generation type as it will have better price-to-performance ratio.</li>
+</ul>
+<h2 id="aws-compute-optimizer">AWS Compute Optimizer</h2>
+<p>Analyzes the configuration and utilization metrics of EC2 instances and Auto Scaling groups. It reduces cost and improve performance of workloads. It generates EC2 instance type and size recommendations for M, C, R, T, and X instance families.</p>
+<p>Findings classification:</p>
+<ul>
+<li>Under-provisioned</li>
+<li>Over-provisioned</li>
+<li>Optimized</li>
+<li>None
+<ul>
+<li>if you have activated compute optimizer for less than 12 hours.</li>
+<li>if instance that has been running for less than 30 hours.</li>
+<li>If the instance type is not supported by Compute Optimizer</li>
+</ul>
+</li>
+</ul>
+<h1 id="user-data-script">User Data Script</h1>
+<p><img src="attachments/Pasted%20image%2020221009091902.png" alt="">
+Script to initialize EC2 on instance creation.</p>
+<ul>
+<li>Update</li>
+<li>Installing software</li>
+</ul>
+<p>Windows use EC2Launch tools to launch userdata written in PowerShell</p>
+<p>Instance metadata (can be retreived from a user data script)</p>
+<ul>
+<li>http://169.254.169.254/latest/meta-data/public-hostname</li>
+</ul>
+<p>How much preconfigured AMI?</p>
+<ul>
+<li>Fully baked AMI: Includes everything, fully functional - longer to build</li>
+<li>JeOS (Just Enough OS AMI) - Minimal OS configuration - longer to boot, because user data needs to run on boot time.</li>
+<li>Hybrid AMI - customizable tradeoffs</li>
+</ul>
+<p>If you too much preconfigured AMI, you may have security vulnerability on your components, such as outdated softwares.</p>
+<p><img src="attachments/Pasted%20image%2020221009092303.png" alt=""></p>
+<h1 id="ec2-storage">EC2 Storage</h1>
+<p>EC2 instances will always have a root volume and optionally have one or more data volumes.</p>
+<ul>
+<li>Instance store (can be root volume)</li>
+<li>EBS (can be root volume)</li>
+<li>Elastic File System (EFS)</li>
+<li>EFx for Windows File Server</li>
+</ul>
+<p>Instance store (temporary storage), example use cases</p>
+<ul>
+<li>Buffers</li>
+<li>Cache</li>
+<li>Scratch data</li>
+</ul>
+<p>EBS (network-attached persistent storage)</p>
+<ul>
+<li>Can attach in the same AZ</li>
+<li>Can be encrypted</li>
+<li>Supports snapshots and stored to S3</li>
+<li>Data persists independently from the life of the instance</li>
+</ul>
+<p>EBS SSD-backed (if you want to focus on IOPS)</p>
+<ul>
+<li>Large database workloads</li>
+<li>Transactional workloads</li>
+</ul>
+<p>EBS HDD-backed (focus on throughput)</p>
+<ul>
+<li>st1 (throughput optimized HDD)
+<ul>
+<li>low-cost &amp; designed for frequently accessed, throughput-intensive workloads</li>
+<li>Example: big data, data warehouses, log processing</li>
+<li>It cannot be a boot volume</li>
+</ul>
+</li>
+<li>sc1 (cold hdd)
+<ul>
+<li>lowest cost HDD volume for infrequent access</li>
+<li>if the lowest storage cost is important</li>
+<li>It cannot be a boot volume</li>
+</ul>
+</li>
+</ul>
+<p>EBS-optimized</p>
+<ul>
+<li>dedicated network connection to attached EBS to omprove I/O</li>
+<li>Manually configured when creating instanced</li>
+</ul>
+<p>To share storage to multiple instances, S3 is an object store, not a block store (allows individual changes to block)</p>
+<ul>
+<li>Amazon EFS
+<ul>
+<li>For Linux</li>
+<li>Supports Network File Systems (NFS) protocols</li>
+<li>Compatible to AMIs that compatible to NFS</li>
+<li>For: Home directories, file system, app dev testing, big data and analysis</li>
+</ul>
+</li>
+<li>Amazon FSx
+<ul>
+<li>Fully native to Windows Compatibility: NTFS, SMB, DFS, Microsoft Active Directory and supports windows Access Control Lists</li>
+<li>For: Home directories, Lift and shift, media and entertainment, data analytics, software environment.</li>
+</ul>
+</li>
+</ul>
+<h1 id="pricing-option">Pricing Option</h1>
+<p>Five ways</p>
+<ul>
+<li>On demand: most flexibility no long term commitment.</li>
+<li>Reserved instances: 1 year or 3 year cmmitment to receive significant discount, for steady compute needs.</li>
+<li>Saving plans: same discounts as Reserved Instances with more flexibility in exchange for a $/hour commitment. For All Amazon EC2, AWS Fargate, AWS Lambda.</li>
+<li>Spot instances: Spare EC2 with lowest price, however Amazon can interrupt usage of spot instance and notify you 2 minutes before. The spot instance cost depends on the region and capacity.</li>
+<li>Dedicated host: physical server with Amazon EC2 instance capacity fully dedicated for your use. For workloads that require the use of your own software license or single tenancy to meet compliance requirements.</li>
+</ul>
+<p><img src="attachments/Pasted%20image%2020221009172725.png" alt=""></p>
+<p>Dedicated host pricing</p>
+<ul>
+<li>On demand</li>
+<li>Saving plans</li>
+<li>Reserved instance</li>
+</ul>
+<p><img src="attachments/Pasted%20image%2020221009172928.png" alt=""></p>
+<ol>
+<li>Know you workload by creating baseline, use reserved instance or saving plans for these baseline</li>
+<li>Use On-demand pricing for spiky workloads</li>
+<li>Scale using spot instance if you need stateless and small usage EC2</li>
+</ol>
+
+      </article>
+    </div>
+  </section>
+</div>
+
+      </main><footer class="footer">
+  <span>&copy; 2022 <a href="https://devismail2y.github.io/notashoppingnote/">Not A Shopping Note</a></span>
+</footer>
+
+    </div>
+  </body>
+</html>
